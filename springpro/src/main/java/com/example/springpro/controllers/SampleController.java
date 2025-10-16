@@ -14,7 +14,7 @@ public class SampleController {
     public String sayHello(@PathVariable("numberOfTimes") int numberOfTimes){
         StringBuilder sb=new StringBuilder();
         for(int i=0;i<numberOfTimes;i++){
-            sb.append("Akshitha\n");
+            sb.append("eshwar\n");
         }
         return sb.toString();
 //         return "Hello Springboot";
