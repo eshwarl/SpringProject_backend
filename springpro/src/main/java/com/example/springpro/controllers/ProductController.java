@@ -1,7 +1,11 @@
 package com.example.springpro.controllers;
 
+import com.example.springpro.exceptions.ProductNotFound;
 import com.example.springpro.models.product;
 import com.example.springpro.services.ProductServices;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -16,8 +20,23 @@ public class ProductController {
 
     }
     @GetMapping("/{id}")
-    public product getProductById(@PathVariable("id") Long id){
-        return productservices.getProductById(id);
+    public product  getProductById(@PathVariable("id") Long id){
+//        ResponseEntity<product>responseEntity=null;
+//        try{
+//            product product=productservices.getProductById(id);
+//            responseEntity=new ResponseEntity<>(
+//                    product,
+//                    HttpStatus.OK
+//            );
+//        }catch(ProductNotFound e){
+//            System.out.println(e.getMessage());
+//            responseEntity=new ResponseEntity<>(
+//                    null,
+//                    HttpStatus.BAD_REQUEST
+//            );
+//        }
+      return productservices.getProductById(id);
+
 
 
     }
