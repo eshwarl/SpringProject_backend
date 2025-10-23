@@ -20,7 +20,7 @@ public class ProductController {
 
     }
     @GetMapping("/{id}")
-    public product  getProductById(@PathVariable("id") Long id){
+    public product  getProductById(@PathVariable("id") Long id) throws ProductNotFound{
 //        ResponseEntity<product>responseEntity=null;
 //        try{
 //            product product=productservices.getProductById(id);

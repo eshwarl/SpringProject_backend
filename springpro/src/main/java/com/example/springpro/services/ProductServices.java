@@ -7,9 +7,10 @@ import com.example.springpro.models.product;
 import java.util.List;
 
 public interface ProductServices {
-    product getProductById(Long productId)throws ProductNotFound ;
+    product getProductById(Long productId) throws ProductNotFound;
     List<product> getAllProducts();
 }
+
 
 
 

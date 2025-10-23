@@ -31,18 +31,19 @@ public class FakeStoreProductService implements ProductServices {
     }
 
     @Override
-    public product getProductById(Long productId) {
+    public product getProductById(Long productId) throws ProductNotFound {
         FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject(
                 "https://fakestoreapi.com/products/" + productId,
                 FakeStoreProductDto.class
         );
 
         if (fakeStoreProductDto == null) {
-            throw new ProductNotFound("Product with id:" + productId + " doesnt exist");
+            throw new ProductNotFound("Product with id:" + productId + " doesn't exist");
         }
 
         return covertFakeProducDtoToProduct(fakeStoreProductDto);
     }
+
 
     @Override
     public List<product> getAllProducts(){
