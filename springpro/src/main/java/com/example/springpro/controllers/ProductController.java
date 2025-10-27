@@ -3,6 +3,7 @@ package com.example.springpro.controllers;
 import com.example.springpro.exceptions.ProductNotFound;
 import com.example.springpro.models.product;
 import com.example.springpro.services.ProductServices;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
     private ProductServices productservices;
-    public ProductController(ProductServices productServices){
+    public ProductController(@Qualifier("SelfProductService") ProductServices productServices){
         this.productservices=productServices;
 
     }
@@ -59,6 +60,13 @@ public class ProductController {
     public product replaceProduct(@PathVariable("id") Long productId,  @RequestBody product product){
         return null;
     }
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable("id")Long id){
+
+    }
+
+//    @ExceptionHandler(ProductNotFound.class)
+//    public  ResponseEntity<String> handleProdctNotFound
 
 
 }
