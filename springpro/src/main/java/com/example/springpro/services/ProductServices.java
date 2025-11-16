@@ -9,6 +9,7 @@ import java.util.List;
 public interface ProductServices {
     product getProductById(Long productId) throws ProductNotFound;
     List<product> getAllProducts();
+    product createProduct(product product);
 }
 
 

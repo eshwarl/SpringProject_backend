@@ -58,4 +58,8 @@ public class FakeStoreProductService implements ProductServices {
         return products;
 
     }
+    @Override
+    public product createProduct(product product){
+        return null;
+    }
 }

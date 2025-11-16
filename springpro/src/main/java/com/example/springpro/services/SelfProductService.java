@@ -35,4 +35,9 @@ public class SelfProductService implements ProductServices{
         return new ArrayList<>();
     }
 
+    @Override
+    public product createProduct(product product){
+        return productRepository.save(product);
+    }
+
 }

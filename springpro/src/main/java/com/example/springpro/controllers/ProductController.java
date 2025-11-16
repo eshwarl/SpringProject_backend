@@ -48,7 +48,7 @@ public class ProductController {
 
     @PostMapping()
     public product createProduct(@RequestBody product product){
-        return null;
+        return productservices.createProduct(product);
 
     }
     @PatchMapping("/{id}")

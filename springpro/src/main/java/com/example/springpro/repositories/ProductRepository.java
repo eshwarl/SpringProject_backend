@@ -13,9 +13,13 @@ public interface ProductRepository extends JpaRepository<product,Long> {
     @Override
     Optional<product> findById(Long productId);
 
+
     @Override
     List<product> findAll();
     Optional<product> findByTitleContains(String str);
     Optional<product> findByCategory(Category category);
-    Optional<product>findByCattegory_Id(Long categoryId);
+    Optional<product>findByCategory_Id(Long categoryId);
+
+  @Override
+    product save(product product);
 }
