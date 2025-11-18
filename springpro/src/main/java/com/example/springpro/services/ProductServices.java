@@ -10,6 +10,11 @@ public interface ProductServices {
     product getProductById(Long productId) throws ProductNotFound;
     List<product> getAllProducts();
     product createProduct(product product);
+    product replaceProduct(Long id,product product) throws ProductNotFound;
+    void deleteProduct(Long id) throws ProductNotFound;
+
+
+
 }
 
 

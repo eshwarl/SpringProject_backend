@@ -22,4 +22,14 @@ public interface ProductRepository extends JpaRepository<product,Long> {
 
   @Override
     product save(product product);
+
+  @Override
+    void deleteById(Long aLong);
+//  select title,price from products where id=10
+   List<product>getProductTitleAndPrice(String title,Double price);
+
+
+//    hQl->hibernate query Language
+
+
 }
