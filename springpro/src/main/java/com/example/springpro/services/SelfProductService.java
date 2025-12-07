@@ -17,6 +17,8 @@ public class SelfProductService implements ProductServices{
 
     private ProductRepository productRepository;
     private CategoryRepository categoryRepository;
+    private Category Category;
+
     public SelfProductService(ProductRepository productRepository,CategoryRepository categoryRepository){
         this.productRepository=productRepository;
         this.categoryRepository=categoryRepository;
@@ -36,7 +38,7 @@ public class SelfProductService implements ProductServices{
     @Override
     public List<product> getAllProducts() {
         // implementation
-        return new ArrayList<>();
+        return productRepository.findAll();
     }
     @Override
     public product createProduct(product product){
@@ -45,6 +47,9 @@ public class SelfProductService implements ProductServices{
         Optional<Category> optionalCategory=categoryRepository.findByName(category.getName());
         if(optionalCategory.isEmpty()){
            category= categoryRepository.save(category);
+
+        }else{
+            category=optionalCategory.get();
 
         }
         product.setCategory(category);

@@ -63,7 +63,9 @@ public class ProductController {
 
     }
     @DeleteMapping("/{id}")
-    public void deleteProduct(@PathVariable("id")Long id){
+    public void deleteProduct(@PathVariable("id")Long id) throws ProductNotFound {
+        productservices.deleteProduct(id);
+
 
     }
 

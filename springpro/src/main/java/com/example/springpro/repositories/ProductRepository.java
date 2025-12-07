@@ -2,7 +2,9 @@ package com.example.springpro.repositories;
 
 import com.example.springpro.models.Category;
 import com.example.springpro.models.product;
+import com.example.springpro.projections.ProductWithIdTitleAndPrice;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,7 +28,8 @@ public interface ProductRepository extends JpaRepository<product,Long> {
   @Override
     void deleteById(Long aLong);
 //  select title,price from products where id=10
-   List<product>getProductTitleAndPrice(String title,Double price);
+//    @Query("select p.title ,p.price  from product p where p.title=:title and p.price= :price")
+//   List<ProductWithIdTitleAndPrice>getProductTitleAndPrice(String title, Double price);
 
 
 //    hQl->hibernate query Language
